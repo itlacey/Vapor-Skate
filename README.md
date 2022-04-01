@@ -1,10 +1,15 @@
-# Vapor-Skate
+# Vapor Skate
 
 Mobile Game Written in Godot.
 
+
+
+## Authors
+
+
 Programmers:
- [itlacey](https://github.com/itlacey)
- [m00nscar](https://github.com/m00nscar)
+- [@itlacey](https://github.com/itlacey)
+- [@m00nscar](https://github.com/m00nscar)
 
 Project Manager:
- [GordieMac](https://twitter.com/gordiemacgames)
+- [@GordieMac](https://twitter.com/gordiemacgames)
