@@ -3,12 +3,12 @@ extends KinematicBody2D
 var motion = Vector2()
 const UP = Vector2(0,-1)
 export var gravity = 20
-export var jumpForce = 600
+export var jumpForce = 525
 var has_double_jumped
 
 func _physics_process(delta):
 	motion.y += gravity
-	motion.x = 0
+	motion.x = 500
 	if Input.is_action_just_pressed("ui_up"):
 			if is_on_floor():
 				jump()
@@ -16,7 +16,7 @@ func _physics_process(delta):
 				jump()
 				has_double_jumped = true
 				
-	motion = move_and_slide(motion, UP)
+	motion = move_and_slide(motion, UP )
 	
 	if is_on_floor():
 		has_double_jumped = false

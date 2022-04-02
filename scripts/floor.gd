@@ -1,8 +1,18 @@
-extends KinematicBody2D
+extends StaticBody2D
+onready var rand_floor = $CollisionShape2D
+var rng = RandomNumberGenerator.new()
+signal spawn_new
 
-var motion = Vector2()
-const UP = Vector2(0,0)
+func _ready():
+	set_friction(0)
+	rng.randomize()
+	rand_floor.scale.x = rng.randf_range(.3, 1.0)
 
-func _process(delta):
-	motion.x = -500
-	motion = move_and_slide(motion, UP)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+
+
+func _on_new_spawn_vis_screen_exited():
+	print('on main node')
+	emit_signal("spawn_new")

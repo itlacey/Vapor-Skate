@@ -41,7 +41,8 @@ texture = ExtResource( 4 )
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2( 8.02869, 5.99406 )
+position = Vector2( -268.254, 0.000462683 )
 rotation = 3.14159
 scale = Vector2( 0.236138, 0.166502 )
 current = true
+limit_bottom = 750
