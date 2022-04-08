@@ -1,41 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/skateboard-assets/ground_256x256.png" type="Texture" id=1]
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends StaticBody2D
-onready var rand_floor = $CollisionShape2D
-var rng = RandomNumberGenerator.new()
-signal spawn_new()
-
-func _ready():
-	set_friction(0)
-	rng.randomize()
-	rand_floor.scale.x = rng.randf_range(.1, .65)
-	
-
-
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-
-func _on_new_spawn_vis_viewport_exited(viewport):
-	emit_signal(\"spawn_new\")
-
-
-"
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1053.5, 178 )
 
 [node name="main_floor" type="StaticBody2D"]
-script = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="new_spawn_vis" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -2500, -67.001 )
-scale = Vector2( 1.74999, 41.9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.3, 1.5 )
@@ -52,6 +25,4 @@ texture = ExtResource( 1 )
 position = Vector2( 3.05176e-05, 0.999962 )
 scale = Vector2( 105.333, 17.7667 )
 
-[connection signal="screen_exited" from="new_spawn_vis" to="." method="_on_new_spawn_vis_screen_exited"]
-[connection signal="viewport_exited" from="new_spawn_vis" to="." method="_on_new_spawn_vis_viewport_exited"]
 [connection signal="screen_exited" from="CollisionShape2D/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

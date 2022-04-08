@@ -11,8 +11,19 @@ config_version=4
 [application]
 
 config/name="VaporSkate"
-run/main_scene="res://scenes/play_area.tscn"
+run/main_scene="res://scenes/main menu.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=2400
+window/size/height=1080
+
+[global]
+
+display=false
+window=false
 
 [input]
 
