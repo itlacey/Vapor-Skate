@@ -14,6 +14,10 @@ onready var dash_timer = $Camera2D/CanvasLayer/dash_timer
 
 func _physics_process(delta):
 	motion.y += gravity
+	if Input.is_action_just_pressed("ui_up"):
+		jump()
+	if Input.is_action_just_pressed("ui_dash"):
+		dash()
 	if currently_dashing:
 		motion.x = speed * 10
 	else:

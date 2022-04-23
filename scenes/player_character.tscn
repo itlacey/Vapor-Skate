@@ -66,10 +66,10 @@ layer = 128
 follow_viewport_scale = -1.267
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/CanvasLayer"]
-margin_left = 96.0
-margin_top = 144.0
-margin_right = 1142.0
-margin_bottom = 265.0
+margin_left = 66.0
+margin_top = 55.0
+margin_right = 1112.0
+margin_bottom = 176.0
 custom_fonts/normal_font = SubResource( 4 )
 text = "Score:"
 __meta__ = {
